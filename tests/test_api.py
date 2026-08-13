@@ -27,17 +27,21 @@ def test_home():
 
 
 def test_register():
+    import uuid
+
+    username = f"pytest_{uuid.uuid4().hex}"
+    email = f"{username}@example.com"
+
     response = client.post(
         "/register",
         json={
-           "username": "brand_new_user_839271",
-	   "email": "brand_new_839271@example.com",
-           "password": "password123"
+            "username": username,
+            "email": email,
+            "password": "password123"
         }
     )
 
-    assert response.status_code in [200, 400]
-
+    assert response.status_code == 200
 
 def test_login():
     response = client.post(
