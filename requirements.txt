@@ -1,10 +1,8 @@
 fastapi
 uvicorn
 sqlalchemy
-python-jose
-passlib
-bcrypt
+pydantic
 python-multipart
-python-dotenv
-pytest
-httpx
+python-jose
+passlib==1.7.4
+bcrypt==4.0.1
